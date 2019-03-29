@@ -1,0 +1,132 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Louis Wang's personal site</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}" />
+
+		<noscript><link rel="stylesheet" href="{% static 'blog/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<a href="/../../" class="logo">LOUIS wang's space</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="/../../">Blogs</a></li>
+							<li><a href="{% static 'blog/aboutme.html' %}">About me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://i.loli.net/2019/01/27/5c4dcf5278810.jpg" class="icon alt fa-weixin"><span class="label">Weixin</span></a></li>
+							<li><a href="https://www.linkedin.com/in/louisylwang/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/LouisYLWang" class="icon alt fa-github-alt"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto://louis.yl.wang@outlook.com" class="icon alt fa-envelope"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<article class="post post-{{ post.pk }}">
+									<header class="entry-header">
+										<h2 class="entry-title">{{ post.title }}</h2>
+											<div class="entry-meta">
+											 <span class="post-category"><a href="#">{{ post.category.name }}</a></span> &nbsp &nbsp
+											 <span class="post-date"><a href="#"><time class="entry-date"
+																																 datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span> &nbsp
+											 <span class="post-author"><a href="#">{{ post.author }}</a></span>	&nbsp
+											 <span class="comments-link"><a href="#">{{ review }} Reviews</a></span> &nbsp &nbsp
+											 <span class="views-count"><a href="#">{{ post.views }} Reads </a></span>
+										 </div>
+									 </br>
+									</header>
+										<div class="entry-content clearfix">
+											{{ post.body|safe }}
+										</div>
+								</article>
+								<header class="major">
+									<span>  <br/>  <br/> </span>
+									<span class="date"> END</span>
+								</header>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="{% url 'comments:post_comment' post.pk %}">
+								{% csrf_token %}
+								<div class="fields">
+									<div class="field">
+										<label for="{{ form.name.id_for_label }}">Name</label>
+										{{ form.name }}
+										{{ form.name.errors }}
+									</div>
+									<div class="field">
+										<label for="{{ form.email.id_for_label }}">Email</label>
+										{{ form.email }}
+							      {{ form.email.errors }}
+									</div>
+									<div class="field">
+										<label for="{{ form.text.id_for_label }}">Message</label>
+										<!-- <textarea name="message" id="message" rows="3"></textarea>-->
+										{{ form.text }}
+										{{ form.text.errors }}
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+
+							</form>
+						</section>
+						<section>
+						<ul class="comment-list list-unstyled">
+						  {% for comment in comment_list %}
+						  <li class="comment-item">
+						    <span class="nickname">{{ comment.name }}</span>
+						    <time class="submit-date">{{ comment.created_time }}</time>
+						    <div class="text">
+						      {{ comment.text }}
+						    </div>
+						  </li>
+						  {% empty %}
+						  No comments
+						  {% endfor %}
+						</ul>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>&copy; louisylwang</li><li>Powered by: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'blog/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'blog/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'blog/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'blog/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'blog/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'blog/assets/js/util.js' %}"></script>
+			<script src="{% static 'blog/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,300 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Lottery time!!!</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}" />
+        <noscript><link rel="stylesheet" href="{% static 'blog/assets/css/noscript.css' %}" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <style type="text/css">
+                    .stamp {width: 302px;height: fit-content;padding: 0 10px;position: relative;overflow: hidden;}
+                    .stamp:before {content: '';position: absolute;top:0;bottom:0;left:10px;right:10px;z-index: -1;}
+                    .stamp:after {content: '';position: absolute;left: 10px;top: 10px;right: 10px;bottom: 10px;box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);z-index: -2;}
+                    .stamp .par{float: left;padding: 16px 15px;width: 224px;border-right:2px dashed rgba(255,255,255,.3);text-align: left;}
+                    .stamp .par p{color:#fff;}
+                    .stamp .par span{font-size: 50px;color:#fff;margin-right: 5px;}
+                    .stamp .par .sign{font-size: 34px;}
+                    .stamp .par sub{position: relative;top:-5px;color:rgba(255,255,255,.8);}
+                    .stamp .copy{display: inline-block;padding:21px 14px;width:100px;vertical-align: text-bottom;font-size: 30px;color:rgb(255,255,255);}
+                    .stamp .copy p{font-size: 16px;margin-top: 15px;}
+        
+                    .stamp03{background: #fff3dd;background: radial-gradient(transparent 0, transparent 5px, #fff3dd 5px);background-size: 15px 15px;background-position: 9px 3px;}
+                    .stamp03:before{background-color:#fff3dd;}
+                    .stamp03 .copy{padding: 10px 6px 10px 12px;font-size: 24px;}
+                    .stamp03 .copy p{font-size: 14px;margin-top: 5px;margin-bottom: 8px;}
+                    .stamp03 .copy a{background-color:#fff;color:#333;font-size: 14px;text-decoration:none;padding:5px 10px;border-radius:3px;display: block;}
+                    /* 触发弹窗图片的样式 */
+                    #myImg {
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+                    
+                    #myImg:hover {opacity: 0.7;}
+                    
+                    /* 弹窗背景 */
+                    .modal {
+                        display: none; /* Hidden by default */
+                        position: fixed; /* Stay in place */
+                        z-index: 1; /* Sit on top */
+                        padding-top: 100px; /* Location of the box */
+                        left: 0;
+                        top: 0;
+                        width: 100%; /* Full width */
+                        height: 100%; /* Full height */
+                        overflow: auto; /* Enable scroll if needed */
+                        background-color: rgb(0,0,0); /* Fallback color */
+                        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+                    }
+                    
+                    /* 图片 */
+                    .modal-content {
+                        margin: auto;
+                        display: block;
+                        width: 80%;
+                        max-width: 700px;
+                    }
+                    
+                    /* 文本内容 */
+                    #caption {
+                        margin: auto;
+                        display: block;
+                        width: 80%;
+                        max-width: 700px;
+                        text-align: center;
+                        color: #ccc;
+                        padding: 10px 0;
+                        height: 150px;
+                    }
+                    
+                    #finish_payment{
+                        box-shadow:unset; 
+                        color: white;
+                        background-color:#fff
+                    }
+
+
+
+                    /* 添加动画 */
+                    .modal-content, #caption { 
+                        -webkit-animation-name: zoom;
+                        -webkit-animation-duration: 0.6s;
+                        animation-name: zoom;
+                        animation-duration: 0.6s;
+                    }
+                    
+                    @-webkit-keyframes zoom {
+                        from {-webkit-transform:scale(0)} 
+                        to {-webkit-transform:scale(1)}
+                    }
+                    
+                    @keyframes zoom {
+                        from {transform:scale(0)} 
+                        to {transform:scale(1)}
+                    }
+                    
+                    /* 关闭按钮 */
+                    .close {
+                        position: absolute;
+                        top: 15px;
+                        right: 35px;
+                        color: #f1f1f1;
+                        font-size: 40px;
+                        font-weight: bold;
+                        transition: 0.3s;
+                    }
+                    
+                    .close:hover,
+                    .close:focus {
+                        color: #bbb;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                    
+                    /* 小屏幕中图片宽度为 100% */
+                    @media only screen and (max-width: 700px){
+                        .modal-content {
+                            width: 100%;
+                        }
+                    }
+                    
+                    </style>
+            </head>
+        
+            <center><div class="stamp stamp03">
+              
+                <i></i>
+
+
+                    <!-- Post -->
+                        <section class="post">
+                            
+                            <!-- Form -->
+                            <center> <a href="#" class="image"><img src="https://i.loli.net/2019/03/28/5c9c7b2b39ffc.png" alt="" style="
+                                width: 260px;
+                                margin-top: 75px;
+                                margin-bottom: 8px
+                                "></a></center>
+                               
+                       
+                               <form>
+
+                                        <!-- Break -->
+
+                                        <!-- Break -->
+                                                <div>
+                                                <span id ="status1">
+                                                    <input id = "xdfd" type="text" minlength="0" maxlength="4" style="
+                                                    height:65px;
+                                                    font-size: 60px; 
+                                                    width: 15rem;
+                                                    font-family:unset;
+                                                    letter-spacing: 0.075em;
+                                                    text-align: center;
+                                                    font-weight: bold;
+                                                    margin-left: auto;
+                                                    margin-right: auto;
+                                                    border-color: black"
+                                                    >
+                                                </span>
+
+                                             
+                                                <header id = "status2" style="display:none">
+             
+                                                </header>
+                                            </div>
+                                        
+                                        <!-- Break -->
+     
+                                </form>
+
+                           
+                                </head>
+                                
+                                <body>
+
+                                <p> </p> 
+                                <center id="myImg" style="margin-bottom: 109px"><button type="button">I've decided</button></center>
+
+        
+
+                            
+                        
+                        </section>
+
+                </div>
+
+        <!-- 弹窗 -->
+        <div id="myModal" class="modal">
+        <!-- 关闭按钮 -->
+        <span class="close" onclick="test()">&times;</span>
+
+        <!-- 弹窗内容 -->
+        <img class="modal-content" id="img01" style="width: -webkit-fill-available;padding-left: 50px;padding-right: 50px;">
+        <center style="padding-top: 30px;"><button id="finish_payment" onclick="test()" >I've paid ￥5</button></center>
+
+
+
+        </div>
+        </center>
+
+             
+        <!-- Scripts -->
+        <script src="https://cdn.bootcss.com/countup.js/1.9.3/countUp.js"></script>
+        <script type="text/javascript">
+            function test(){
+
+                document.getElementById('myModal').style.display='none'
+
+                var picknum = document.getElementById("xdfd").value;
+                var num =  "{{ lottery_num }}"
+
+
+                if (num <= 9)
+                {
+                    var options = {
+                    useGrouping: false,
+                    prefix: '000',
+                };
+                }
+                else if (num <= 99)
+                {
+                    var options = {
+                    useGrouping: false,
+                    prefix: '00',
+                };
+                }
+                else if (num <= 999)
+                {
+                    var options = {
+                    useGrouping: false,
+                    prefix: '0',
+                };            
+                }
+                else
+                {
+                    var options = {
+                    useGrouping: false,
+                };            
+                }
+
+
+
+                let demo = new CountUp('xdfd', 1000, num, 0, 3, options);
+                if (!demo.error) {
+                    demo.start();
+
+                    setTimeout(function(){
+                        if (num!=picknum){
+                    alert("So sad, maybe next time");
+                      }
+                    },3500)
+                    
+                    
+                } else {
+                    console.error(demo.error);
+                }
+                }
+
+        </script>
+        <script type="text/javascript">
+
+        var modal = document.getElementById('myModal');
+        var img = document.getElementById('myImg');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = "https://i.loli.net/2019/03/28/5c9c9e2f069e7.jpg";
+            captionText.innerHTML = this.alt;
+        }
+         
+        var span = document.getElementsByClassName("close")[0];
+         
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+       </script>
+
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="./js/countUp.min.js" type="module"></script>
+            <script src="https://cdn.bootcss.com/countup.js/1.9.3/countUp.js"></script>
+
+</html>
