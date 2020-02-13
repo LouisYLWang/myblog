@@ -1,0 +1,21 @@
+[2020-02-12 23:07:23 +0000] [29093] [INFO] Starting gunicorn 19.9.0
+[2020-02-12 23:07:23 +0000] [29093] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2020-02-12 23:07:23 +0000] [29093] [ERROR] Retrying in 1 second.
+[2020-02-12 23:07:24 +0000] [29093] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2020-02-12 23:07:24 +0000] [29093] [ERROR] Retrying in 1 second.
+[2020-02-12 23:07:25 +0000] [29093] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2020-02-12 23:07:25 +0000] [29093] [ERROR] Retrying in 1 second.
+[2020-02-12 23:07:26 +0000] [29093] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2020-02-12 23:07:26 +0000] [29093] [ERROR] Retrying in 1 second.
+[2020-02-12 23:07:27 +0000] [29093] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2020-02-12 23:07:27 +0000] [29093] [ERROR] Retrying in 1 second.
+[2020-02-12 23:07:28 +0000] [29093] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2020-02-12 23:09:52 +0000] [29232] [INFO] Starting gunicorn 19.9.0
+[2020-02-12 23:09:52 +0000] [29232] [INFO] Listening at: http://0.0.0.0:8000 (29232)
+[2020-02-12 23:09:52 +0000] [29232] [INFO] Using worker: gthread
+[2020-02-12 23:09:52 +0000] [29241] [INFO] Booting worker with pid: 29241
+[2020-02-12 23:09:52 +0000] [29242] [INFO] Booting worker with pid: 29242
+[2020-02-13 00:12:57 +0000] [29232] [INFO] Handling signal: hup
+[2020-02-13 00:12:57 +0000] [29232] [INFO] Hang up: Master
+[2020-02-13 00:12:57 +0000] [30852] [INFO] Booting worker with pid: 30852
+[2020-02-13 00:12:57 +0000] [30853] [INFO] Booting worker with pid: 30853
