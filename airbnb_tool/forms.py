@@ -1,7 +1,0 @@
-# -*- coding: utf-8 -*-
-from django import forms
-#from .models import Airbnb_tools
-
-
-class raw_urlForm(forms.Form):
-    fields = forms.URLField()
