@@ -1,212 +1,171 @@
 {% load staticfiles %}
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Louis Wang's personal site</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
-		<link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}" />
-		<!-- <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
-		<noscript><link rel="stylesheet" href="{% static 'blog/assets/css/noscript.css' %}" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Yiliang Wang</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-
-
-				<!-- Intro -->
-					<div id="intro">
-
-						<a href="#" class="image"><img src="{% static 'blog/images/avatar.png' %}" alt style="width: 160px;padding-bottom: 40px;"/></a>
-						<h1>Louis "Yiliang" Wang</h1>
-						<p>Shining like a diamond</a><br />
-						   rolling with the dice</a></p>
-						<!-- <ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">ch</a></li>
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-						</ul> -->
-						<ul class="actions special">
-								<li><a href="#header" class="button">En</a></li>
-								<li><a href="index_ch.html#header" class="button">中</a></li>
-						</ul>
-					</div>
-
-				<!-- Header -->
-					<header id="header">
-						<a href="/../../" class="logo">Louis Wang's space</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="#header" >projects</a></li>
-							<li><a href="{% static 'blog/aboutme.html' %}">About me</a></li>
-							<!--<li class="active"><a href="index.html">This is Massively</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li><a href="elements.html">Elements Reference</a></li>-->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://i.loli.net/2019/01/27/5c4dcf5278810.jpg" class="icon alt fa-weixin"><span class="label">Weixin</span></a></li>
-							<li><a href="https://www.linkedin.com/in/louisylwang/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/LouisYLWang" class="icon alt fa-github-alt"><span class="label">GitHub</span></a></li>
-							<li><a href="mailto://louis.yl.wang@outlook.com" class="icon alt fa-envelope"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<!-- Featured Post
-							<article class="post featured">
-								<header class="major">
-									<span class="date"><a href="#"><time class="entry-date" datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
-									<h2>
-									<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-									</h2>
-
-									<div class="entry-meta">
-										<span class="post-category"><a href="#">{{ post.category.name }}</a></span>
-										<span class="post-author"><a href="#">{{ post.author }}</a></span><br />
-										<!-- <span class="comments-link"><a href="#">4 评论</a></span>
-										<span class="views-count"><a href="#">{{ post.views }} Read</a></span>
-									</div>
-														<br/>
-									<p>{{ post.excerpt|truncatechars:300 }}</p>
-								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="{{ post.get_absolute_url }}" class="button large">Read more</a></li>
-								</ul>
-							</article>-->
-
-						<!-- Posts -->
-							<section class="posts">
-								{% for post in post_list %}
-
-								<article class="post" post-{{ post.pk }}>
-									<span class="date"><a href="#"><time class="entry-date" datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
-									<h3 class="entry-title">
-										<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-									</h3>
-									<div class="entry-meta">
-									  <span class="post-category"><a href="#">{{ post.category.name }}</a></span>
-									  <span class="post-author"><a href="#">{{ post.author }}</a></span><br />
-									  <span class="comments-link"><a href="#">{{ review }}</a></span>
-									  <span class="views-count"><a href="#">{{ post.views }} Read</a></span>
-									</div>
-									<br/>
-									<div class="entry-content clearfix">
-									  <p>{{ post.excerpt|truncatechars:200 }}</p>
-									  <div class="read-more cl-effect-14">
-											<ul class="actions special">
-												<li><a href="{{ post.get_absolute_url }}" class="button">Read more</a></li>
-											</ul>
-										</div>
-									</div>
-
-								</article>
-							{% empty %}
-								<div class="no-post">The author is lazy, no article now！</div>
-							{% endfor %}
-							<!--
-								<article>
-									<header>
-										<span class="date">April 24, 2017</span>
-										<h2><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 22, 2017</span>
-										<h2><a href="#">Primis eget<br />
-										imperdiet lorem</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-							-->
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-						<!-- <footer id="footer">
-					<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto://louis.yl.wang@outlook.com">louis.yl.wang@outlook.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://i.loli.net/2019/01/27/5c4dcf5278810.jpg" class="icon alt fa-weixin"><span class="label">Weixin</span></a></li>
-									<li><a href="https://www.linkedin.com/in/louisylwang/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/LouisYLWang" class="icon alt fa-github-alt"><span class="label">GitHub</span></a></li>
-									<li><a href="mailto://louis.yl.wang@outlook.com" class="icon alt fa-envelope"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-				-->
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; louisylwang</li><li>Powered by: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
+<body>
+	<header>
+		<div id="intro">
+			<img id="title-photo" src="{% static 'blog/assets/img/avatar.png' %}" class="rounded-circle mx-auto d-block"
+				alt="me">
+			<div id="name_slogan">
+				<h1 class="display-4"> Yiliang "Louis" Wang</h1>
+				<h5 class="display-6"> 𝕾𝖍𝖎𝖓𝖎𝖓𝖌 𝖑𝖎𝖐𝖊 𝖆 💎 <br> 𝖗𝖔𝖑𝖑𝖎𝖓𝖌 𝖜𝖎𝖙𝖍 𝖙𝖍𝖊 🎲</h5>
 			</div>
+		</div>
+	</header>
 
-		<!-- Scripts -->
-			<!-- <script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>-->
-			<script src="{% static 'blog/assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'blog/assets/js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'blog/assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'blog/assets/js/browser.min.js' %}"></script>
-			<script src="{% static 'blog/assets/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'blog/assets/js/util.js' %}"></script>
-			<script src="{% static 'blog/assets/js/main.js' %}"></script>
-	</body>
+	<div class="container">
+		<div id="index-tab" class="container">
+			<nav>
+				<ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts"
+							role="tab" aria-controls="pills-posts" aria-selected="true">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+							aria-controls="pills-profile" aria-selected="false">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+							aria-controls="pills-contact" aria-selected="false">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<main>
+				<div class="tab-content" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="pills-posts" role="tabpanel"
+						aria-labelledby="pills-posts-tab">
+						<div id=search-bar>
+							<form>
+								<div class="form-group">
+									<input type="text" class="form-control" id="post-filter"
+										placeholder="Search posts.." />
+								</div>
+							</form>
+						</div>
+
+						<div class="card-columns"></div>
+
+					</div>
+					<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+						<div class="jumbotron">
+							<div id="main">
+								<section class="post">
+									<header class="major">
+										<span class="date">updated on May, 2020</span>
+									</header>
+									<div class="note note-detail-markdown">
+										<hr class="my-4">
+										<h2>WORK EXPERIENCE</h2>
+										<blockquote>
+											<h5><strong>NewPoint.io</strong></h5>
+											<p><strong>Software Developer, Intern</strong><br>
+												Jun. 2020 – present <br>Seattle, U.S. </p>
+
+										</blockquote>
+
+										<blockquote>
+											<h5><strong>Beijing Starlight S&T Development Co., Ltd</strong></h5>
+											<p><strong>Software Developer, Intern</strong><br>
+												Oct. 2018 – Feb. 2019 <br>Beijing, China </p>
+
+										</blockquote>
+
+										<blockquote>
+											<h5><strong>Ernst &amp; Young (China) Advisory Ltd.</strong></h5>
+											<p><strong>Risk Advisory service, Associate Consultant</strong><br>
+												July. 2017 – Jun. 2018 <br>Beijing, China </p>
+
+										</blockquote>
+
+										<hr class="my-4">
+										<h2>EDUCATION</h2>
+										<blockquote>
+											<h5><strong>University of Washington, Seattle</strong></h5>
+											<strong>Ms. Information Management
+											</strong><br> Spt. 2019 - Jun. 2021 (est.) <br>Seattle, U.S.
+										</blockquote>
+										<blockquote>
+											<h5><strong>China Agricultural University</strong></h5>
+											<strong>Economics and Management of Agriculture and Forestry
+											</strong><br> Spt. 2013 - Jun. 2017 <br>Beijing, China
+										</blockquote>
+
+										<hr class="my-4">
+										<h2>TECHNICAL SKILLS</h2>
+
+										<h5><strong>Programming Languages</strong></h5>
+
+										<p>
+											Java • Golang • Python • Kotlin • SQL • JavaScript/TypeScript
+										</p>
+
+										<h5><strong>Frameworks &amp;Tools </strong></h5>
+										<p> AWS EC2 • MERN • SpringBoot • Django • Android SDK • Docker • Redis •
+											RabbitMQ</p>
+
+										<hr class="my-4">
+										<h2>ACTIVITIES &amp; SOCIETIES</h2>
+										<blockquote>
+											<h5><strong>volunteer teacher (INCLUDED NGO)</strong></h5>
+											Mar. 2014 - Jul. 2014
+											<p>As a voluntary
+												Teached English and leaded an introductory course of basic
+												computer for low income communities and organized a team of
+												volunteer librarians for that communities.</p>
+											<p>Beijing, China</p>
+										</blockquote>
+									</div>
+								</section>
+								<hr class="my-4">
+								<p class="lead">
+									<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+						style="padding-top: 10px; padding-bottom: 10px;">
+						<a href="https://i.loli.net/2019/01/27/5c4dcf5278810.jpg" class="btn btn-success"> <i
+								class="fa fa-weixin"></i> WeChat</a>
+						<a href="https://www.linkedin.com/in/louisylwang/" class="btn btn-primary"> <i
+								class="fa fa-linkedin"></i> Linkedin</a>
+						<a href="https://github.com/LouisYLWang" class="btn btn-secondary"> <i class="fa fa-github"></i>
+							GitHub</a>
+						<a href="mailto://louis.yl.wang@outlook.com" class="btn btn-info"> <i
+								class="fa fa-envelope"></i>
+							Email</a>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	</main>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script src="{% static 'blog/assets/js/index.js' %}"></script>
+</body>
+
 </html>

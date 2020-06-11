@@ -1,11 +1,16 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.conf.urls import url
 
 app_name = 'blog'
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^post/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
+    path("", views.IndexView.as_view(), name="index"),
+    #path("posts/<int:pk>/", views.PostDetailView.as_view(), name="detail"),
+    path("categories/<int:pk>/", views.CategoryView.as_view(), name="category"),
+    path("tags/<int:pk>/", views.TagView.as_view(), name="tag"),
+    path("api/posts/", views.posts),
+    path("api/tags/", views.tags),
+    path("api/categories/", views.cates),
+    url(r'^posts/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
+    ]
 
-]
