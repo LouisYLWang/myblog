@@ -1,13 +1,14 @@
 const postAPI =
     "https://ylwang.codes/api/posts/?format=json";
 
+var POSTS;
+
 function renderPosts(post_list) {
     postCardColumns = document.querySelector(".card-columns");
     // don't forget to clear
     postCardColumns.textContent = "";
     post_list.sort((a, b) => b.id - a.id);
     post_list.forEach(post_raw => {
-        console.log(post_raw);
         renderPost(post_raw);
     });
 }
@@ -17,18 +18,18 @@ var search = document.querySelector("#post-filter");
 search.addEventListener("input", (e) => {
     e.preventDefault;
     var searchKey = search.value.toLowerCase();
-    var filtered_posts = postJSON.filter((key) => key.title.toLowerCase().includes(searchKey));
-    renderPosts(filtered_posts);
+    POSTS.then(posts =>{
+        var filtered_posts = posts.filter((key) => key.title.toLowerCase().includes(searchKey));
+        renderPosts(filtered_posts);
+    })
 })
 
 function renderPost(post) {
     var postToAdd = document.createElement("div");
     postToAdd.setAttribute("class", "card");
     postToAdd.setAttribute("id", `post_${post.id}`);
-    console.log(postToAdd);
     postCardColumns = document.querySelector(".card-columns");
     postCardColumns.appendChild(postToAdd);
-    console.log(document.getElementById("post_1"));
     document.getElementById(`post_${post.id}`).innerHTML = `
         <img class="card-img-top" src="/static/blog/assets/img/${post.id}.jpg" alt="Card image cap">
         <div class="card-body">
@@ -51,16 +52,16 @@ function renderPost(post) {
 }
 
 function parseAsJSON(response) {
-    return response.json()
+    POSTS = response.json();
+    return POSTS;
 }
 
 function handleError(err) {
     console.error(err);
-    alert(err.message);
 }
 
 
-var postJSON= fetch(postAPI, {
+fetch(postAPI, {
     method: "GET",
     headers: {
         'Access-Control-Allow-Origin': "https://ylwang.codes/api/posts/?format=json",
@@ -68,6 +69,3 @@ var postJSON= fetch(postAPI, {
     }
 }).then(parseAsJSON)
   .then(renderPosts)
-  .then(handleError) 
-
-//renderPosts(POST)
