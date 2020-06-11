@@ -57,3 +57,7 @@
 Index page:
 
 https://github.com/LouisYLWang/ylwang.codes/blob/master/templates/blog/index.html
+
+Static style & script files:
+
+https://github.com/LouisYLWang/ylwang.codes/tree/master/blog/static/blog/assets
