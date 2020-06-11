@@ -54,3 +54,6 @@
     $ pipenv run python manage.py runserver
     ```
 
+Index page:
+
+https://github.com/LouisYLWang/ylwang.codes/blob/master/templates/blog/index.html
