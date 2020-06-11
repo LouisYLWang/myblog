@@ -37,7 +37,7 @@ function renderPost(post) {
                 <span class="badge badge-success">Read</span>
                 <span class="badge badge-pill badge-primary">${post.views}</span>
                 <span class="badge badge-warning">Comment</span>
-                <span class="badge badge-pill badge-primary">${post.reviews}</span>
+                <span class="badge badge-pill badge-primary">0</span>
             </div>
             <div class="tags">
                 <span class="badge badge-pill badge-danger">${post.category.name}</span>
