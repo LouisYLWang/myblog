@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Yiliang Wang</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -14,54 +14,61 @@
 </head>
 
 <body>
-	<div id="intro">
-		<img id="title-photo" src="{% static 'blog/assets/img/avatar.png' %}" class="rounded-circle mx-auto d-block">
-		<div id="name_slogan">
-			<h1 class="display-4"> Yiliang "Louis" Wang</h1>
-			<h5 class="display-6"> 𝕾𝖍𝖎𝖓𝖎𝖓𝖌 𝖑𝖎𝖐𝖊 𝖆 💎 <br> 𝖗𝖔𝖑𝖑𝖎𝖓𝖌 𝖜𝖎𝖙𝖍 𝖙𝖍𝖊 🎲</h1>
+	<header>
+		<div id="intro">
+			<img id="title-photo" src="{% static 'blog/assets/img/avatar.png' %}" class="rounded-circle mx-auto d-block"
+				alt="me">
+			<div id="name_slogan">
+				<h1 class="display-4"> Yiliang "Louis" Wang</h1>
+				<h5 class="display-6"> 𝕾𝖍𝖎𝖓𝖎𝖓𝖌 𝖑𝖎𝖐𝖊 𝖆 💎 <br> 𝖗𝖔𝖑𝖑𝖎𝖓𝖌 𝖜𝖎𝖙𝖍 𝖙𝖍𝖊 🎲</h5>
+			</div>
 		</div>
-	</div>
+	</header>
 
 	<div class="container">
 		<div id="index-tab" class="container">
-			<ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
-				<li class="nav-item">
-					<a class="nav-link active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts" role="tab"
-						aria-controls="pills-posts" aria-selected="true">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-						aria-controls="pills-profile" aria-selected="false">Profile</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-						aria-controls="pills-contact" aria-selected="false">Contact</a>
-				</li>
-			</ul>
-			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-posts" role="tabpanel"
-					aria-labelledby="pills-home-tab">
-					<div id=search-bar>
-						<form>
-							<div class="form-group">
-								<input type="text" class="form-control" id="post-filter" placeholder="Search posts.." />
-							</div>
-						</form>
+			<nav>
+				<ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts"
+							role="tab" aria-controls="pills-posts" aria-selected="true">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+							aria-controls="pills-profile" aria-selected="false">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+							aria-controls="pills-contact" aria-selected="false">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<main>
+				<div class="tab-content" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="pills-posts" role="tabpanel"
+						aria-labelledby="pills-posts-tab">
+						<div id=search-bar>
+							<form>
+								<div class="form-group">
+									<input type="text" class="form-control" id="post-filter"
+										placeholder="Search posts.." />
+								</div>
+							</form>
+						</div>
+
+						<div class="card-columns"></div>
+
 					</div>
-
-					<div class="card-columns"></div>
-
-				</div>
-				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-					<div class="jumbotron">
-						<div id="main">
-							<section class="post">
-								<header class="major">
-									<span class="date">updated on May, 2020</span>
-								</header>
-								<div class="note note-detail-markdown">
-									<hr class="my-4">
-									<h2>WORK EXPERIENCE</h1>
+					<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+						<div class="jumbotron">
+							<div id="main">
+								<section class="post">
+									<header class="major">
+										<span class="date">updated on May, 2020</span>
+									</header>
+									<div class="note note-detail-markdown">
+										<hr class="my-4">
+										<h2>WORK EXPERIENCE</h2>
 										<blockquote>
 											<h5><strong>NewPoint.io</strong></h5>
 											<p><strong>Software Developer, Intern</strong><br>
@@ -114,49 +121,51 @@
 										<blockquote>
 											<h5><strong>volunteer teacher (INCLUDED NGO)</strong></h5>
 											Mar. 2014 - Jul. 2014
-											<li class="checklist-item">As a voluntary
+											<p>As a voluntary
 												Teached English and leaded an introductory course of basic
 												computer for low income communities and organized a team of
-												volunteer librarians for that communities.
-											</li>
-											<li class="checklist-item">Beijing, China</li>
+												volunteer librarians for that communities.</p>
+											<p>Beijing, China</p>
 										</blockquote>
-								</div>
-							</section>
-							<hr class="my-4">
-							<p class="lead">
-								<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-							</p>
+									</div>
+								</section>
+								<hr class="my-4">
+								<p class="lead">
+									<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
-					style="padding-top: 10px; padding-bottom: 10px;">
-					<a href="https://i.loli.net/2019/01/27/5c4dcf5278810.jpg" class="btn btn-success"> <i
-							class="fa fa-weixin"></i> WeChat</a>
-					<a href="https://www.linkedin.com/in/louisylwang/" class="btn btn-primary"> <i
-							class="fa fa-linkedin"></i> Linkedin</a>
-					<a href="https://github.com/LouisYLWang" class="btn btn-secondary"> <i class="fa fa-github"></i>
-						GitHub</a>
-					<a href="mailto://louis.yl.wang@outlook.com" class="btn btn-info"> <i class="fa fa-envelope"></i>
-						Email</a>
+					<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+						style="padding-top: 10px; padding-bottom: 10px;">
+						<a href="https://i.loli.net/2019/01/27/5c4dcf5278810.jpg" class="btn btn-success"> <i
+								class="fa fa-weixin"></i> WeChat</a>
+						<a href="https://www.linkedin.com/in/louisylwang/" class="btn btn-primary"> <i
+								class="fa fa-linkedin"></i> Linkedin</a>
+						<a href="https://github.com/LouisYLWang" class="btn btn-secondary"> <i class="fa fa-github"></i>
+							GitHub</a>
+						<a href="mailto://louis.yl.wang@outlook.com" class="btn btn-info"> <i
+								class="fa fa-envelope"></i>
+							Email</a>
+					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 
+	</main>
 
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script src="{% static 'blog/assets/js/index.js' %}"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
-<script src="{% static 'blog/assets/js/index.js' %}"></script>
 
 </html>

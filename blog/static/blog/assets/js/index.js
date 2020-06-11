@@ -41,8 +41,7 @@ function renderPost(post) {
             </div>
             <div class="tags">
                 <span class="badge badge-pill badge-danger">${post.category.name}</span>
-                <span class="badge badge-pill badge-info">Java</span>
-                <span class="badge badge-pill badge-info">Project</span>
+                <span class="badge badge-pill badge-info">test</span>
             </div>
 
             <p class="card-text">${post.excerpt}</p>
