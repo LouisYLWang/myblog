@@ -1,2 +1,2 @@
 web: python manage.py migrate
-web: gunicorn gettingstarted.wsgi --log-file -
+web: gunicorn blogproject.wsgi --log-file -
