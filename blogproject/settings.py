@@ -62,7 +62,7 @@ MIDDLEWARE_CLASSES  = (
 )
 
 ROOT_URLCONF = 'blogproject.urls'
-STATICFILES_STORAGE = 'whitenoise.storage.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
