@@ -3,5 +3,6 @@ gunicorn
 markdown
 djangorestframework
 Pillow
+python-decouple
 django_heroku
 whitenoise
