@@ -3,3 +3,5 @@ gunicorn
 markdown
 djangorestframework
 Pillow
+django_heroku
+whitenoise
