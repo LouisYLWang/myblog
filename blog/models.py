@@ -12,8 +12,6 @@ from django.utils.html import strip_tags
 from markdown.extensions.toc import TocExtension
 import re
 
-#from django.utils.six import python_2_unicide_compatible
-
 # Create your models here.
 
 def generate_rich_content(value):
@@ -55,7 +53,7 @@ class Post(models.Model):
     body = models.TextField()
     created_time = models.DateTimeField(default=timezone.now)
     modified_time = models.DateTimeField()
-    excerpt = models.CharField(max_length = 200, blank=True)
+    excerpt = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, blank=True)
     views = models.PositiveIntegerField(default=0)
